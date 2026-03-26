@@ -117,3 +117,63 @@ pip install numpy matplotlib
 ```
 python main.py
 ```
+---
+
+## ⚙️ Environment Parameters Configuration
+
+All simulation parameters are defined in `config.py`, allowing easy experimentation with agent behavior, evolution, and environment dynamics.
+
+---
+
+### 🌍 Environment
+- `GRID_WIDTH`, `GRID_HEIGHT` — Size of the grid world  
+- `FOOD_DENSITY` — Initial food distribution  
+- `FOOD_RESPAWN_RATE` — Probability of food appearing per step  
+
+---
+
+### 👥 Population
+- `POPULATION_SIZE` — Initial number of agents  
+- `MIN_POPULATION` — Minimum population (auto refill)  
+- `MAX_POPULATION` — Maximum population cap  
+- `GENERATION_STEPS` — Total simulation steps  
+
+---
+
+### 🧠 Neural Network
+- `PERCEPTION_RADIUS` — Size of local observation window  
+- `HIDDEN_SIZE` — Number of neurons in hidden layer  
+- `USE_ENERGY_INPUT`, `USE_AGE_INPUT` — Include internal state as input  
+- `OUTPUT_SIZE` — Action space (movement + reproduction)  
+
+---
+
+### ⚡ Energy System
+- `ENERGY_INIT` — Starting energy  
+- `ENERGY_MAX` — Maximum energy limit  
+- `ENERGY_PER_STEP` — Energy decay per step  
+- `ENERGY_FROM_FOOD` — Energy gained from food  
+- `ENERGY_DEATH_THRESHOLD` — Death condition  
+
+---
+
+### 🧬 Reproduction
+- `REPRODUCE_ENERGY_THRESHOLD` — Minimum energy to reproduce  
+- `REPRODUCE_ENERGY_COST` — Energy cost of reproduction  
+- `CHILD_ENERGY_START` — Initial energy of offspring  
+
+---
+
+### 🧪 Evolution (Mutation)
+- `MUTATION_RATE` — Probability of mutation  
+- `MUTATION_STRENGTH` — Magnitude of weight changes  
+
+---
+
+### 🎨 Visualization
+- `VIZ_INTERVAL` — Rendering frequency  
+- `ANIMATION_SPEED_MS` — Visualization speed  
+
+---
+
+These parameters control the balance between **exploration, survival, and evolution**, and can be tuned to observe different emergent behaviors.
