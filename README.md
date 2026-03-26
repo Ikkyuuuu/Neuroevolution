@@ -1,19 +1,25 @@
 # Neuroevolution : Ikkyu's Game of Life
 
-Inspired by "Conway’s Game of Life", this project extends the classical cellular automata model by integrating concepts from 01076582 ARTIFICIAL INTELLIGENCE Course at KMITL, including neural networks and genetic algorithms.
+Inspired by Conway’s Game of Life, this project reimagines classical cellular automata through the lens of modern artificial intelligence. Instead of simple rule-based cells, agents in this environment are driven by neural networks and evolve over time using genetic algorithms. <br><br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif" width="100%" />
+
+Apply knowledge from 01076582 Artificial Intelligence course at KMITL, particularly neural networks and evolutionary algorithms—this project explores how complex, lifelike behaviors can emerge from simple components. Agents perceive their surroundings, make decisions, compete for resources, and adapt across generations, transforming a static grid world into a dynamic, evolving ecosystem. <br><br>
+<img width="100%" alt="สกรีนช็อต 2026-03-26 192012" src="https://github.com/user-attachments/assets/ef49f7bf-c992-4cbd-9f51-860fed80039c" />
+
 
 ---
 
 ## 🚀 Overview
 
-The traditional Game of Life uses fixed, deterministic rules to evolve cell states. In this project, those rules are replaced with **learned behavior**, where each cell acts as an autonomous agent.
+The traditional Game of Life operates on fixed, deterministic rules to update cell states. In this project, those rules are replaced with learned behavior, where each cell functions as an autonomous agent.
 
-Each cell:
-- Observes its local environment
-- Uses a neural network to decide its next state
+Each agent:
+
+- Observes its local environment (configurable perception range)
+- Uses a neural network to decide its next action (single hidden layer with adjustable size)
 - Evolves over time through genetic algorithms
 
-This transforms the system from rule-based simulation into an **artificial life environment with emergent behavior**.
+This transforms the system from a rule-based simulation into an artificial life environment, where complex and adaptive behaviors emerge from simple interactions.
 
 ---
 
