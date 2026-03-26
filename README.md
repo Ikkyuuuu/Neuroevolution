@@ -27,10 +27,10 @@ This transforms the system from a rule-based simulation into an artificial life 
 
 This project applies knowledge from artificial intelligence coursework, including:
 
-- **Cellular Automata** – Grid-based simulation with local interactions  
-- **Neural Networks** – Each cell uses a small neural model for decision-making  
-- **Genetic Algorithms** – Evolution of cell behavior through mutation and selection  
-- **Emergence** – Complex global patterns arising from simple local rules  
+- **Cellular Automata** – A grid-based environment where global behavior emerges from local interactions
+- **Neural Networks** – Each agent uses a lightweight neural model to map perceptions to actions
+- **Genetic Algorithms** – Agent behaviors evolve over time through mutation and selection
+- **Emergence** – Complex, system-level patterns arise from simple agent-environment interactions
 
 ---
 
@@ -38,20 +38,21 @@ This project applies knowledge from artificial intelligence coursework, includin
 
 ### Environment
 - 2D grid-based world
-- Each position contains a cell (alive or dead)
+- Each cell may contain food, an agent, or remain empty
+- Food is dynamically generated, creating a structured and evolving resource landscape
 
 ### Cell Agent
 Each cell is treated as an agent with:
-- **Inputs**: Neighboring cell states  
-- **Brain**: Neural network (weights + bias + activation)  
-- **Output**: Decision to live, die, or change state  
+- **Inputs**: Local perception of the surrounding grid (configurable radius), optionally including internal states such as energy and age
+- **Brain**: A feedforward neural network (weights, biases, activation functions)
+- **Output**: Action decisions (e.g., move, stay, or reproduce)
 
 ### Evolution Mechanism
-- Population of cells evolves over generations
-- Fitness based on survival, stability, or pattern formation
+- A population of agents evolves continuously over time (no discrete generations)
+- Fitness is implicit, driven by survival and reproduction success
 - Genetic operations:
-  - Mutation (random weight changes)
-  - Selection (retain high-performing cells)
+  - Mutation Random perturbations to neural network parameters
+  - Selection Agents that survive longer and reproduce more frequently pass on their traits
 
 ---
 
