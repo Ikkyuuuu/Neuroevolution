@@ -1,171 +1,101 @@
-# Neuroevolution : Ikkyu's Game of Life
+# Neuroevolution: Ikkyu’s Game of Life
 
-Inspired by "Conway’s Game of Life", this project reimagines classical cellular automata through the lens of modern artificial intelligence. Instead of simple rule-based cells, agents in this environment are driven by neural networks and evolve over time using genetic algorithms. <br><br>
+Inspired by **Conway’s Game of Life**, this project reimagines classical cellular automata using modern artificial intelligence. Instead of fixed rules, agents are controlled by neural networks and evolve over time through genetic algorithms.
+
+<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif" width="100%" />
+<br>
 
-Apply knowledge from 01076582 Artificial Intelligence course at KMITL, particularly neural networks and evolutionary algorithms—this project explores how complex, lifelike behaviors can emerge from simple components. Agents perceive their surroundings, make decisions, compete for resources, and adapt across generations, transforming a static grid world into a dynamic, evolving ecosystem. <br><br>
-<img width="100%" alt="สกรีนช็อต 2026-03-26 192012" src="https://github.com/user-attachments/assets/ef49f7bf-c992-4cbd-9f51-860fed80039c" />
+Using concepts from artificial intelligence—particularly neural networks and evolutionary algorithms—this project explores how complex, lifelike behaviors can emerge from simple components.
 
+<br>
+<img width="100%" src="https://github.com/user-attachments/assets/ef49f7bf-c992-4cbd-9f51-860fed80039c" />
 
 ---
 
 ## 🚀 Overview
 
-The traditional Game of Life operates on fixed, deterministic rules to update cell states. In this project, those rules are replaced with learned behavior, where each cell functions as an autonomous agent.
+The traditional Game of Life operates on deterministic rules.  
+Here, those rules are replaced with **learned behavior**, where each cell acts as an autonomous agent.
 
 Each agent:
+- Observes its local environment
+- Uses a neural network to decide actions
+- Evolves over time through mutation and selection
 
-- Observes its local environment (configurable perception range)
-- Uses a neural network to decide its next action (single hidden layer with adjustable size)
-- Evolves over time through genetic algorithms
-
-This transforms the system from a rule-based simulation into an artificial life environment, where complex and adaptive behaviors emerge from simple interactions.
+This creates an **artificial life system** where behavior emerges rather than being predefined.
 
 ---
 
 ## 🧠 Key Concepts
 
-This project applies knowledge from artificial intelligence coursework, including:
-
-- **Cellular Automata** – A grid-based environment where global behavior emerges from local interactions
-- **Neural Networks** – Each agent uses a lightweight neural model to map perceptions to actions
-- **Genetic Algorithms** – Agent behaviors evolve over time through mutation and selection
-- **Emergence** – Complex, system-level patterns arise from simple agent-environment interactions
+- **Cellular Automata** – Local interactions drive global behavior  
+- **Neural Networks** – Map perception to action  
+- **Genetic Algorithms** – Evolve behavior over time  
+- **Emergence** – Complex patterns arise from simple rules  
 
 ---
 
 ## ⚙️ System Architecture
 
 ### Environment
-- 2D grid-based world
-- Each cell may contain food, an agent, or remain empty
-- Food is dynamically generated, creating a structured and evolving resource landscape
+- 2D grid world  
+- Cells may contain food, agents, or be empty  
+- Food is dynamically generated  
 
-### Cell Agent
-Each cell is treated as an agent with:
-- **Inputs**: Local perception of the surrounding grid (configurable radius), optionally including internal states such as energy and age
-- **Brain**: A feedforward neural network (weights, biases, activation functions)
-- **Output**: Action decisions (e.g., move, stay, or reproduce)
+### Agent
+- **Inputs**: Local grid perception (+ optional energy/age)  
+- **Brain**: Feedforward neural network  
+- **Outputs**: Actions (move, stay, reproduce)  
 
-### Evolution Mechanism
-- A population of agents evolves continuously over time (no discrete generations)
-- Fitness is implicit, driven by survival and reproduction success
-- Genetic operations:
-  - Mutation Random perturbations to neural network parameters
-  - Selection Agents that survive longer and reproduce more frequently pass on their traits
+### Evolution
+- Continuous (no fixed generations)  
+- Survival and reproduction define success  
+- Mutation drives diversity  
 
 ---
 
-## ⚙️ Control Variables & Experiment Settings
+## 🧠 Neural Network
 
-This simulation is designed to be configurable, allowing experimentation with different environmental conditions, agent capabilities, and evolutionary strategies.
-
----
-
-### 🧠 Neural Network Configuration
-
-- **Hidden Layer Size**
-  - Number of neurons in hidden layer (10)
-
-- **Network Depth**
-  - Single-layer 
-
-- **Activation Function**
-  - tanh 
+- Hidden layer: 10 neurons  
+- Activation: `tanh`  
 
 ---
 
-### 🧬 Evolution Strategy
+## 🧬 Evolution
 
-- **Reproduction Type**
-  - Asexual (mutation only)
-
-- **Mutation Scale**
-  - Controls magnitude of weight changes
-
-- **Mutation Probability**
-  - Fraction of parameters mutated per generation
-
-- **Selection Strategy**
-  - Top-k selection (e.g., top 20%)
-  - Tournament selection
-  - Random survivor inclusion
+- Asexual reproduction (mutation only)  
+- Mutation controls behavioral variation  
+- Selection emerges naturally via survival  
 
 ---
 
-### ⚡ Fitness & Survival
+## ⚡ Dynamics
 
-- **Energy System**
-  - Gain energy from food
-  - Lose energy per step
-
-- **Reproduction Threshold**
-  - Minimum energy required to reproduce
-
-- **Reproduction Cost**
-  - Energy deducted during reproduction
-
-- **Aging**
-  - Optional age tracking
-  - Maximum lifespan or decay over time
+- Agents gain energy from food  
+- Lose energy over time  
+- Reproduce when energy threshold is reached  
+- Die when energy is depleted  
 
 ---
 
-### 🔄 Population Control
+## 🎮 Agent Actions
 
-- **Population Size Limit**
-  - Maximum number of agents in environment
-
-- **Elitism**
-  - Preserve top-performing agents across generations
-
-- **Random Injection**
-  - Introduce new random agents to maintain diversity
-
----
-
-### 🎮 Action Space
-
-- **Discrete Movement**
-  - Up, Down, Left, Right
-
-- **Continuous Movement** *(optional)*
-  - Directional vector (dx, dy)
-
-- **Reproduction Action**
-  - Explicit (agent decides when to reproduce)
-  - Implicit (triggered by proximity + energy)
-
----
-
-### ⏱️ Simulation Parameters
-
-- **Steps per Generation**
-  - Number of simulation steps before evolution
-
-- **Simulation Speed**
-  - Controls visualization update rate
-
-- **Grid Size**
-  - Environment dimensions
+- Move: Up, Down, Left, Right  
+- Reproduce  
 
 ---
 
 ## 💡 Motivation
 
-This project explores the idea that:
+> Intelligence can emerge from simple agents interacting locally, without explicit global rules.
 
-> Intelligent behavior can emerge from simple agents interacting locally, without explicit global rules.
-
-By combining cellular automata with learning and evolution, this system serves as a bridge between:
-- Artificial Life (A-Life)
-- Machine Learning
-- Complex Systems
+This project connects:
+- Artificial Life (ALife)  
+- Machine Learning  
+- Complex Systems  
 
 ---
 
 ## 📌 Summary
-
-Ikkyu reimagines Conway’s Game of Life by replacing deterministic rules with adaptive, evolving agents. It demonstrates how intelligence and structure can emerge through local interactions, learning, and evolution.
-
----
+This project reimagines the Game of Life as a neuroevolutionary system, where agents learn, adapt, and evolve over time—demonstrating how complex behavior can emerge from simple local interactions.
