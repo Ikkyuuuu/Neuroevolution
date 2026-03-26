@@ -1,6 +1,6 @@
 # Neuroevolution : Game of Life
 
-Inspired by Conway’s Game of Life, this project extends the classical cellular automata model by integrating concepts from artificial intelligence, including neural networks and genetic algorithms.
+Inspired by Conway’s Game of Life, this project extends the classical cellular automata model by integrating concepts from 01076582 ARTIFICIAL INTELLIGENCE Course at KMITL, including neural networks and genetic algorithms.
 
 ---
 
