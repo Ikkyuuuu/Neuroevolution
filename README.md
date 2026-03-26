@@ -99,3 +99,21 @@ This project connects:
 
 ## 📌 Summary
 This project reimagines the Game of Life as a neuroevolutionary system, where agents learn, adapt, and evolve over time—demonstrating how complex behavior can emerge from simple local interactions.
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+```
+git clone https://github.com/Ikkyuuuu/Neuroevolution.git
+cd Neuroevolution
+```
+### 2. Install dependencies
+```
+pip install numpy matplotlib
+```
+### 3. Run the simulation
+```
+python main.py
+```
