@@ -143,9 +143,9 @@ class Visualizer:
         self.ax_stats.relim()
         self.ax_stats.autoscale_view()
 
-        self.fig.canvas.draw()
+        self.fig.canvas.draw_idle()
         self.fig.canvas.flush_events()
-
+   
     def close(self):
         plt.ioff()
         plt.show()
