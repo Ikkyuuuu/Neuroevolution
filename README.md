@@ -62,48 +62,16 @@ This simulation is designed to be configurable, allowing experimentation with di
 
 ---
 
-### 🌍 Environment Observability
-
-- **Fully Observable**
-  - Agents have access to the entire grid state
-  - Enables global decision-making
-  - Higher computational complexity
-
-- **Partially Observable**
-  - Agents perceive only a local region (e.g., radius-based sensing)
-  - Encourages exploration and emergent behavior
-  - More biologically realistic
-
----
-
-### 👁️ Perception / Sensor Model
-
-- **Local Radius Sensing**
-  - Detects environment within a fixed radius
-  - Can include food, other agents, or hazards
-
-- **Directional Sensing**
-  - Aggregated signals (e.g., food_up, food_down, etc.)
-  - Lower dimensional input
-
-- **Gradient-Based Sensing**
-  - Uses directional differences (dx, dy)
-  - More efficient representation
-
----
-
 ### 🧠 Neural Network Configuration
 
 - **Hidden Layer Size**
-  - Number of neurons in hidden layer (e.g., 8–20)
+  - Number of neurons in hidden layer (10)
 
 - **Network Depth**
-  - Single-layer (recommended)
-  - Multi-layer (experimental)
+  - Single-layer 
 
 - **Activation Function**
-  - tanh (default)
-  - ReLU (optional)
+  - tanh 
 
 ---
 
@@ -111,7 +79,6 @@ This simulation is designed to be configurable, allowing experimentation with di
 
 - **Reproduction Type**
   - Asexual (mutation only)
-  - Sexual (crossover + mutation) *(optional)*
 
 - **Mutation Scale**
   - Controls magnitude of weight changes
@@ -141,19 +108,6 @@ This simulation is designed to be configurable, allowing experimentation with di
 - **Aging**
   - Optional age tracking
   - Maximum lifespan or decay over time
-
----
-
-### 🧠 Internal State Awareness
-
-- **Include Energy as Input**
-  - Agent can adapt behavior based on current energy
-
-- **Include Age as Input**
-  - Enables lifecycle-based decision-making
-
-- **Disabled**
-  - Purely reactive agent (environment-only)
 
 ---
 
@@ -194,49 +148,6 @@ This simulation is designed to be configurable, allowing experimentation with di
 
 - **Grid Size**
   - Environment dimensions
-
----
-
-## 🧪 Purpose
-
-These control variables allow systematic experimentation with:
-
-- Emergent behavior under different constraints  
-- Impact of observability on intelligence  
-- Trade-offs between exploration and exploitation  
-- Evolution dynamics under varying selection pressure  
-
----
-
-## 🔁 Simulation Loop
-
-1. Initialize grid with random cells and neural weights  
-2. For each timestep:
-   - Cells observe neighbors  
-   - Neural network determines next state  
-3. Evaluate fitness  
-4. Select top-performing cells  
-5. Reproduce with mutation  
-6. Repeat  
-
----
-
-## 📊 Features
-
-- Replaces fixed rules with adaptive neural behavior  
-- Demonstrates emergent patterns beyond Conway’s rules  
-- Visual simulation of evolving cellular systems  
-- Modular design for experimenting with different AI methods  
-
----
-
-## 🧪 Future Improvements
-
-- Add multi-layer neural networks  
-- Introduce stochastic environments  
-- Compare rule-based vs learned behavior  
-- Add visualization of fitness over generations  
-- Extend to continuous space instead of grid  
 
 ---
 
