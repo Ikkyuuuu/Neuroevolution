@@ -10,6 +10,7 @@ Using concepts from artificial intelligence—particularly neural networks and e
 
 <br>
 <img width="100%" src="https://github.com/user-attachments/assets/ef49f7bf-c992-4cbd-9f51-860fed80039c" />
+<br><br>
 
 ---
 
@@ -23,7 +24,7 @@ Each agent:
 - Uses a neural network to decide actions
 - Evolves over time through mutation and selection
 
-This creates an **artificial life system** where behavior emerges rather than being predefined.
+This creates an **artificial life system** where behavior emerges rather than being predefined.<br><br>
 
 ---
 
@@ -33,6 +34,7 @@ This creates an **artificial life system** where behavior emerges rather than be
 - **Neural Networks** – Map perception to action  
 - **Genetic Algorithms** – Evolve behavior over time  
 - **Emergence** – Complex patterns arise from simple rules  
+<br><br>
 
 ---
 
@@ -52,6 +54,7 @@ This creates an **artificial life system** where behavior emerges rather than be
 - Continuous (no fixed generations)  
 - Survival and reproduction define success  
 - Mutation drives diversity  
+<br><br>
 
 ---
 
@@ -59,6 +62,7 @@ This creates an **artificial life system** where behavior emerges rather than be
 
 - Hidden layer: 10 neurons  
 - Activation: `tanh`  
+<br><br>
 
 ---
 
@@ -67,6 +71,7 @@ This creates an **artificial life system** where behavior emerges rather than be
 - Asexual reproduction (mutation only)  
 - Mutation controls behavioral variation  
 - Selection emerges naturally via survival  
+<br><br>
 
 ---
 
@@ -76,6 +81,7 @@ This creates an **artificial life system** where behavior emerges rather than be
 - Lose energy over time  
 - Reproduce when energy threshold is reached  
 - Die when energy is depleted  
+<br><br>
 
 ---
 
@@ -83,6 +89,7 @@ This creates an **artificial life system** where behavior emerges rather than be
 
 - Move: Up, Down, Left, Right  
 - Reproduce  
+<br><br>
 
 ---
 
@@ -94,11 +101,13 @@ This project connects:
 - Artificial Life (ALife)  
 - Machine Learning  
 - Complex Systems  
+<br><br>
 
 ---
 
 ## 📌 Summary
 This project reimagines the Game of Life as a neuroevolutionary system, where agents learn, adapt, and evolve over time—demonstrating how complex behavior can emerge from simple local interactions.
+<br><br>
 
 ---
 
@@ -117,6 +126,8 @@ pip install numpy matplotlib
 ```
 python main.py
 ```
+<br><br>
+
 ---
 
 ## ⚙️ Environment Parameters Configuration
