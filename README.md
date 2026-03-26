@@ -1,253 +1,190 @@
-# Neuroevolution : Ikkyu's Game of Life
+# Neuroevolution: Ikkyu’s Game of Life
 
-Inspired by "Conway’s Game of Life", this project extends the classical cellular automata model by integrating concepts from 01076582 ARTIFICIAL INTELLIGENCE Course at KMITL, including neural networks and genetic algorithms.
+Inspired by **Conway’s Game of Life**, this project reimagines classical cellular automata using modern artificial intelligence. Instead of fixed rules, agents are controlled by neural networks and evolve over time through genetic algorithms.
+
+<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif" width="100%" />
+<br>
+
+Using concepts from artificial intelligence—particularly neural networks and evolutionary algorithms—this project explores how complex, lifelike behaviors can emerge from simple components.
+
+<br>
+<img width="100%" src="https://github.com/user-attachments/assets/ef49f7bf-c992-4cbd-9f51-860fed80039c" />
+<br><br>
 
 ---
 
 ## 🚀 Overview
 
-The traditional Game of Life uses fixed, deterministic rules to evolve cell states. In this project, those rules are replaced with **learned behavior**, where each cell acts as an autonomous agent.
+The traditional Game of Life operates on deterministic rules.  
+Here, those rules are replaced with **learned behavior**, where each cell acts as an autonomous agent.
 
-Each cell:
+Each agent:
 - Observes its local environment
-- Uses a neural network to decide its next state
-- Evolves over time through genetic algorithms
+- Uses a neural network to decide actions
+- Evolves over time through mutation and selection
 
-This transforms the system from rule-based simulation into an **artificial life environment with emergent behavior**.
+This creates an **artificial life system** where behavior emerges rather than being predefined.<br><br>
 
 ---
 
 ## 🧠 Key Concepts
 
-This project applies knowledge from artificial intelligence coursework, including:
-
-- **Cellular Automata** – Grid-based simulation with local interactions  
-- **Neural Networks** – Each cell uses a small neural model for decision-making  
-- **Genetic Algorithms** – Evolution of cell behavior through mutation and selection  
-- **Emergence** – Complex global patterns arising from simple local rules  
+- **Cellular Automata** – Local interactions drive global behavior  
+- **Neural Networks** – Map perception to action  
+- **Genetic Algorithms** – Evolve behavior over time  
+- **Emergence** – Complex patterns arise from simple rules  
+<br><br>
 
 ---
 
 ## ⚙️ System Architecture
 
 ### Environment
-- 2D grid-based world
-- Each position contains a cell (alive or dead)
+- 2D grid world  
+- Cells may contain food, agents, or be empty  
+- Food is dynamically generated  
 
-### Cell Agent
-Each cell is treated as an agent with:
-- **Inputs**: Neighboring cell states  
-- **Brain**: Neural network (weights + bias + activation)  
-- **Output**: Decision to live, die, or change state  
+### Agent
+- **Inputs**: Local grid perception (+ optional energy/age)  
+- **Brain**: Feedforward neural network  
+- **Outputs**: Actions (move, stay, reproduce)  
 
-### Evolution Mechanism
-- Population of cells evolves over generations
-- Fitness based on survival, stability, or pattern formation
-- Genetic operations:
-  - Mutation (random weight changes)
-  - Selection (retain high-performing cells)
-
----
-
-## ⚙️ Control Variables & Experiment Settings
-
-This simulation is designed to be configurable, allowing experimentation with different environmental conditions, agent capabilities, and evolutionary strategies.
+### Evolution
+- Continuous (no fixed generations)  
+- Survival and reproduction define success  
+- Mutation drives diversity  
+<br><br>
 
 ---
 
-### 🌍 Environment Observability
+## 🧠 Neural Network
 
-- **Fully Observable**
-  - Agents have access to the entire grid state
-  - Enables global decision-making
-  - Higher computational complexity
-
-- **Partially Observable**
-  - Agents perceive only a local region (e.g., radius-based sensing)
-  - Encourages exploration and emergent behavior
-  - More biologically realistic
+- Hidden layer: 10 neurons  
+- Activation: `tanh`  
+<br><br>
 
 ---
 
-### 👁️ Perception / Sensor Model
+## 🧬 Evolution
 
-- **Local Radius Sensing**
-  - Detects environment within a fixed radius
-  - Can include food, other agents, or hazards
-
-- **Directional Sensing**
-  - Aggregated signals (e.g., food_up, food_down, etc.)
-  - Lower dimensional input
-
-- **Gradient-Based Sensing**
-  - Uses directional differences (dx, dy)
-  - More efficient representation
+- Asexual reproduction (mutation only)  
+- Mutation controls behavioral variation  
+- Selection emerges naturally via survival  
+<br><br>
 
 ---
 
-### 🧠 Neural Network Configuration
+## ⚡ Dynamics
 
-- **Hidden Layer Size**
-  - Number of neurons in hidden layer (e.g., 8–20)
-
-- **Network Depth**
-  - Single-layer (recommended)
-  - Multi-layer (experimental)
-
-- **Activation Function**
-  - tanh (default)
-  - ReLU (optional)
+- Agents gain energy from food  
+- Lose energy over time  
+- Reproduce when energy threshold is reached  
+- Die when energy is depleted  
+<br><br>
 
 ---
 
-### 🧬 Evolution Strategy
+## 🎮 Agent Actions
 
-- **Reproduction Type**
-  - Asexual (mutation only)
-  - Sexual (crossover + mutation) *(optional)*
-
-- **Mutation Scale**
-  - Controls magnitude of weight changes
-
-- **Mutation Probability**
-  - Fraction of parameters mutated per generation
-
-- **Selection Strategy**
-  - Top-k selection (e.g., top 20%)
-  - Tournament selection
-  - Random survivor inclusion
-
----
-
-### ⚡ Fitness & Survival
-
-- **Energy System**
-  - Gain energy from food
-  - Lose energy per step
-
-- **Reproduction Threshold**
-  - Minimum energy required to reproduce
-
-- **Reproduction Cost**
-  - Energy deducted during reproduction
-
-- **Aging**
-  - Optional age tracking
-  - Maximum lifespan or decay over time
-
----
-
-### 🧠 Internal State Awareness
-
-- **Include Energy as Input**
-  - Agent can adapt behavior based on current energy
-
-- **Include Age as Input**
-  - Enables lifecycle-based decision-making
-
-- **Disabled**
-  - Purely reactive agent (environment-only)
-
----
-
-### 🔄 Population Control
-
-- **Population Size Limit**
-  - Maximum number of agents in environment
-
-- **Elitism**
-  - Preserve top-performing agents across generations
-
-- **Random Injection**
-  - Introduce new random agents to maintain diversity
-
----
-
-### 🎮 Action Space
-
-- **Discrete Movement**
-  - Up, Down, Left, Right
-
-- **Continuous Movement** *(optional)*
-  - Directional vector (dx, dy)
-
-- **Reproduction Action**
-  - Explicit (agent decides when to reproduce)
-  - Implicit (triggered by proximity + energy)
-
----
-
-### ⏱️ Simulation Parameters
-
-- **Steps per Generation**
-  - Number of simulation steps before evolution
-
-- **Simulation Speed**
-  - Controls visualization update rate
-
-- **Grid Size**
-  - Environment dimensions
-
----
-
-## 🧪 Purpose
-
-These control variables allow systematic experimentation with:
-
-- Emergent behavior under different constraints  
-- Impact of observability on intelligence  
-- Trade-offs between exploration and exploitation  
-- Evolution dynamics under varying selection pressure  
-
----
-
-## 🔁 Simulation Loop
-
-1. Initialize grid with random cells and neural weights  
-2. For each timestep:
-   - Cells observe neighbors  
-   - Neural network determines next state  
-3. Evaluate fitness  
-4. Select top-performing cells  
-5. Reproduce with mutation  
-6. Repeat  
-
----
-
-## 📊 Features
-
-- Replaces fixed rules with adaptive neural behavior  
-- Demonstrates emergent patterns beyond Conway’s rules  
-- Visual simulation of evolving cellular systems  
-- Modular design for experimenting with different AI methods  
-
----
-
-## 🧪 Future Improvements
-
-- Add multi-layer neural networks  
-- Introduce stochastic environments  
-- Compare rule-based vs learned behavior  
-- Add visualization of fitness over generations  
-- Extend to continuous space instead of grid  
+- Move: Up, Down, Left, Right  
+- Reproduce  
+<br><br>
 
 ---
 
 ## 💡 Motivation
 
-This project explores the idea that:
+> Intelligence can emerge from simple agents interacting locally, without explicit global rules.
 
-> Intelligent behavior can emerge from simple agents interacting locally, without explicit global rules.
-
-By combining cellular automata with learning and evolution, this system serves as a bridge between:
-- Artificial Life (A-Life)
-- Machine Learning
-- Complex Systems
+This project connects:
+- Artificial Life (ALife)  
+- Machine Learning  
+- Complex Systems  
+<br><br>
 
 ---
 
 ## 📌 Summary
-
-Ikkyu reimagines Conway’s Game of Life by replacing deterministic rules with adaptive, evolving agents. It demonstrates how intelligence and structure can emerge through local interactions, learning, and evolution.
+This project reimagines the Game of Life as a neuroevolutionary system, where agents learn, adapt, and evolve over time—demonstrating how complex behavior can emerge from simple local interactions.
+<br><br>
 
 ---
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+```
+git clone https://github.com/Ikkyuuuu/Neuroevolution.git
+cd Neuroevolution
+```
+### 2. Install dependencies
+```
+pip install numpy matplotlib
+```
+### 3. Run the simulation
+```
+python main.py
+```
+<br><br>
+
+---
+
+## ⚙️ Environment Parameters Configuration
+
+All simulation parameters are defined in `config.py`, allowing easy experimentation with agent behavior, evolution, and environment dynamics.
+
+---
+
+### 🌍 Environment
+- `GRID_WIDTH`, `GRID_HEIGHT` — Size of the grid world  
+- `FOOD_DENSITY` — Initial food distribution  
+- `FOOD_RESPAWN_RATE` — Probability of food appearing per step  
+
+---
+
+### 👥 Population
+- `POPULATION_SIZE` — Initial number of agents  
+- `MIN_POPULATION` — Minimum population (auto refill)  
+- `MAX_POPULATION` — Maximum population cap  
+- `GENERATION_STEPS` — Total simulation steps  
+
+---
+
+### 🧠 Neural Network
+- `PERCEPTION_RADIUS` — Size of local observation window  
+- `HIDDEN_SIZE` — Number of neurons in hidden layer  
+- `USE_ENERGY_INPUT`, `USE_AGE_INPUT` — Include internal state as input  
+- `OUTPUT_SIZE` — Action space (movement + reproduction)  
+
+---
+
+### ⚡ Energy System
+- `ENERGY_INIT` — Starting energy  
+- `ENERGY_MAX` — Maximum energy limit  
+- `ENERGY_PER_STEP` — Energy decay per step  
+- `ENERGY_FROM_FOOD` — Energy gained from food  
+- `ENERGY_DEATH_THRESHOLD` — Death condition  
+
+---
+
+### 🧬 Reproduction
+- `REPRODUCE_ENERGY_THRESHOLD` — Minimum energy to reproduce  
+- `REPRODUCE_ENERGY_COST` — Energy cost of reproduction  
+- `CHILD_ENERGY_START` — Initial energy of offspring  
+
+---
+
+### 🧪 Evolution (Mutation)
+- `MUTATION_RATE` — Probability of mutation  
+- `MUTATION_STRENGTH` — Magnitude of weight changes  
+
+---
+
+### 🎨 Visualization
+- `VIZ_INTERVAL` — Rendering frequency  
+- `ANIMATION_SPEED_MS` — Visualization speed  
+
+---
+
+These parameters control the balance between **exploration, survival, and evolution**, and can be tuned to observe different emergent behaviors.
