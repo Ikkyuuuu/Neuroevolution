@@ -49,6 +49,158 @@ Each cell is treated as an agent with:
 
 ---
 
+## ⚙️ Control Variables & Experiment Settings
+
+This simulation is designed to be configurable, allowing experimentation with different environmental conditions, agent capabilities, and evolutionary strategies.
+
+---
+
+### 🌍 Environment Observability
+
+- **Fully Observable**
+  - Agents have access to the entire grid state
+  - Enables global decision-making
+  - Higher computational complexity
+
+- **Partially Observable**
+  - Agents perceive only a local region (e.g., radius-based sensing)
+  - Encourages exploration and emergent behavior
+  - More biologically realistic
+
+---
+
+### 👁️ Perception / Sensor Model
+
+- **Local Radius Sensing**
+  - Detects environment within a fixed radius
+  - Can include food, other agents, or hazards
+
+- **Directional Sensing**
+  - Aggregated signals (e.g., food_up, food_down, etc.)
+  - Lower dimensional input
+
+- **Gradient-Based Sensing**
+  - Uses directional differences (dx, dy)
+  - More efficient representation
+
+---
+
+### 🧠 Neural Network Configuration
+
+- **Hidden Layer Size**
+  - Number of neurons in hidden layer (e.g., 8–20)
+
+- **Network Depth**
+  - Single-layer (recommended)
+  - Multi-layer (experimental)
+
+- **Activation Function**
+  - tanh (default)
+  - ReLU (optional)
+
+---
+
+### 🧬 Evolution Strategy
+
+- **Reproduction Type**
+  - Asexual (mutation only)
+  - Sexual (crossover + mutation) *(optional)*
+
+- **Mutation Scale**
+  - Controls magnitude of weight changes
+
+- **Mutation Probability**
+  - Fraction of parameters mutated per generation
+
+- **Selection Strategy**
+  - Top-k selection (e.g., top 20%)
+  - Tournament selection
+  - Random survivor inclusion
+
+---
+
+### ⚡ Fitness & Survival
+
+- **Energy System**
+  - Gain energy from food
+  - Lose energy per step
+
+- **Reproduction Threshold**
+  - Minimum energy required to reproduce
+
+- **Reproduction Cost**
+  - Energy deducted during reproduction
+
+- **Aging**
+  - Optional age tracking
+  - Maximum lifespan or decay over time
+
+---
+
+### 🧠 Internal State Awareness
+
+- **Include Energy as Input**
+  - Agent can adapt behavior based on current energy
+
+- **Include Age as Input**
+  - Enables lifecycle-based decision-making
+
+- **Disabled**
+  - Purely reactive agent (environment-only)
+
+---
+
+### 🔄 Population Control
+
+- **Population Size Limit**
+  - Maximum number of agents in environment
+
+- **Elitism**
+  - Preserve top-performing agents across generations
+
+- **Random Injection**
+  - Introduce new random agents to maintain diversity
+
+---
+
+### 🎮 Action Space
+
+- **Discrete Movement**
+  - Up, Down, Left, Right
+
+- **Continuous Movement** *(optional)*
+  - Directional vector (dx, dy)
+
+- **Reproduction Action**
+  - Explicit (agent decides when to reproduce)
+  - Implicit (triggered by proximity + energy)
+
+---
+
+### ⏱️ Simulation Parameters
+
+- **Steps per Generation**
+  - Number of simulation steps before evolution
+
+- **Simulation Speed**
+  - Controls visualization update rate
+
+- **Grid Size**
+  - Environment dimensions
+
+---
+
+## 🧪 Purpose
+
+These control variables allow systematic experimentation with:
+
+- Emergent behavior under different constraints  
+- Impact of observability on intelligence  
+- Trade-offs between exploration and exploitation  
+- Evolution dynamics under varying selection pressure  
+
+---
+
 ## 🔁 Simulation Loop
 
 1. Initialize grid with random cells and neural weights  
