@@ -100,13 +100,19 @@ This creates an **artificial life system** where behavior emerges rather than be
 This project connects:
 - Artificial Life (ALife)  
 - Machine Learning  
-- Complex Systems  
+- Biology & Evolution  
 <br><br>
 
 ---
 
 ## 📌 Summary
 This project reimagines the Game of Life as a neuroevolutionary system, where agents learn, adapt, and evolve over time—demonstrating how complex behavior can emerge from simple local interactions.
+
+**Observation:**  
+Under the current environment and perception settings (e.g., limited vision radius), agents tend to converge toward simple directional movement strategies—such as moving consistently in one direction with slight adjustments to collect food.
+
+This behavior reflects a form of **local optimum convergence** (often related to the *ridge problem*), discovered through the genetic algorithm. It highlights how environmental structure and perception constraints strongly shape the strategies that emerge.
+
 <br><br>
 
 ---
